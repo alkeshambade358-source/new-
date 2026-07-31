@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Everything I Love About You ❤️</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700&family=Poppins:wght@400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+font-family:Poppins,sans-serif;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(135deg,#fff8f5,#ffeef2);
+overflow:hidden;
+}
+.card{
+background:#fff;
+padding:40px;
+border-radius:24px;
+box-shadow:0 20px 60px rgba(0,0,0,.12);
+text-align:center;
+max-width:420px;
+width:90%;
+}
+.play{
+width:90px;height:90px;
+margin:0 auto 25px;
+border-radius:50%;
+background:#ff5b8a;
+color:#fff;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:40px;
+cursor:pointer;
+transition:.3s;
+}
+.play:hover{transform:scale(1.08)}
+h1{
+font-family:'Cormorant Garamond',serif;
+font-size:48px;
+color:#7d3b57;
+margin-bottom:15px;
+}
+p{color:#666}
+.modal{
+display:none;
+position:fixed;
+inset:0;
+background:rgba(0,0,0,.85);
+justify-content:center;
+align-items:center;
+}
+.modal video{
+width:min(92vw,900px);
+max-height:90vh;
+border-radius:16px;
+background:#000;
+}
+.close{
+position:absolute;
+top:20px;
+right:30px;
+font-size:42px;
+color:#fff;
+cursor:pointer;
+}
+</style>
+</head>
+<body>
+
+<div class="card">
+<div class="play" onclick="openVideo()">▶</div>
+<h1>Everything I Love About You</h1>
+<p>Click the play button to watch ❤️</p>
+</div>
+
+<div class="modal" id="modal">
+<div class="close" onclick="closeVideo()">×</div>
+<video id="video" controls autoplay>
+<source src="video.mp4" type="video/mp4">
+Your browser does not support HTML5 video.
+</video>
+</div>
+
+<script>
+function openVideo(){
+document.getElementById('modal').style.display='flex';
+document.getElementById('video').play();
+}
+function closeVideo(){
+const v=document.getElementById('video');
+v.pause();
+v.currentTime=0;
+document.getElementById('modal').style.display='none';
+}
+</script>
+
+</body>
+</html>
